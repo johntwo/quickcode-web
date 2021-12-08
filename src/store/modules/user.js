@@ -14,12 +14,12 @@ const state = getDefaultState()
 
 const mutations = {
   RESET_STATE: (state) => {
-    for (const item in state) {
-      state[item] = undefined
-    }
+    Object.assign(state, getDefaultState())
   },
   SET_USER: (state, user) => {
-    Object.assign(state, user)
+    state.id = user.id
+    state.nickname = user.nickname
+    state.username = user.nickname
   }
 }
 
