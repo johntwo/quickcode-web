@@ -28,6 +28,6 @@ export function current(data) {
 export function logout() {
   return request({
     url: '/admin/user/logout',
-    method: 'post'
+    method: 'delete'
   })
 }
