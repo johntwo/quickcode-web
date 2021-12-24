@@ -1,14 +1,19 @@
 <template>
-  <div class="dashboard-container">
-    <div class="dashboard-text">name: {{ name }}</div>
-  </div>
+  <UploadImage v-model="files" :limit="10" />
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import UploadImage from '@/components/UploadImage'
 
 export default {
   name: 'Dashboard',
+  components: { UploadImage },
+  data() {
+    return {
+      files: undefined
+    }
+  },
   computed: {
     ...mapGetters([
       'name'
