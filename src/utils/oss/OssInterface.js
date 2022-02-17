@@ -1,0 +1,9 @@
+class OssInterface {
+  upload() {
+
+  }
+
+  getOssToken() {
+
+  }
+}
