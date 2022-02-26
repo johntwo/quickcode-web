@@ -14,6 +14,19 @@ export function getList(params) {
 }
 
 /**
+ * 获取角色列表选项
+ * @param data
+ * @returns {AxiosPromise}
+ */
+export function getOption(params) {
+  return request({
+    url: '/admin/role/getOption',
+    method: 'get',
+    params
+  })
+}
+
+/**
  * 新增
  * @param data
  * @returns {AxiosPromise}
