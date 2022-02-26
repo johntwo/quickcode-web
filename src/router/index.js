@@ -36,13 +36,11 @@ export const constantRoutes = [
     component: () => import('@/views/login/index'),
     hidden: true
   },
-
   {
     path: '/404',
     component: () => import('@/views/404'),
     hidden: true
   },
-
   {
     path: '/',
     component: Layout,
@@ -53,8 +51,10 @@ export const constantRoutes = [
       component: () => import('@/views/dashboard/index'),
       meta: { title: '首页', icon: 'dashboard' }
     }]
-  },
+  }
+]
 
+export const asyncRoutes = [
   {
     path: '/auth',
     component: Layout,
@@ -63,7 +63,18 @@ export const constantRoutes = [
       path: 'list',
       name: '角色列表',
       component: () => import('@/views/auth/index'),
-      meta: { title: '角色列表', icon: 'dashboard' }
+      meta: { title: '角色列表', icon: 'role' }
+    }]
+  },
+  {
+    path: '/user',
+    component: Layout,
+    redirect: '/user/list',
+    children: [{
+      path: 'list',
+      name: '用户列表',
+      component: () => import('@/views/user/index'),
+      meta: { title: '用户列表', icon: 'user' }
     }]
   },
 
@@ -71,10 +82,8 @@ export const constantRoutes = [
   { path: '*', redirect: '/404', hidden: true }
 ]
 
-export const asyncRoutes = []
-
 const createRouter = () => new Router({
-  // mode: 'history', // require service support
+  mode: 'hash', // require service support
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
