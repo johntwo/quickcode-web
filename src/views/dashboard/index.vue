@@ -1,14 +1,12 @@
 <template>
-  <UploadImage v-model="files" :limit="10" />
+  <el-empty description="开发中" />
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import UploadImage from '@/components/UploadImage'
 
 export default {
   name: 'Dashboard',
-  components: { UploadImage },
   data() {
     return {
       files: undefined

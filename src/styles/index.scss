@@ -62,4 +62,36 @@ div:focus {
 // main-container global css
 .app-container {
   padding: 20px;
+  display: block;
+  background:rgb(240, 242, 245);
+}
+.filter-container{
+  .filter-item {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
+.table-operation-container{
+  background-color: rgb(250, 250, 250);
+  padding: 10px 15px;
+  border-top: 1px solid rgb(235, 238, 245);
+  border-left: 1px solid rgb(235, 238, 245);
+  border-right: 1px solid rgb(235, 238, 245);
+}
+.table-header{
+  th{
+    background-color: rgb(250, 250, 250);
+    color:#000;
+  }
+}
+.el-dialog{
+  border-radius: 5px;
+  .el-dialog__header {
+    border-bottom: 1px solid rgb(237, 237, 237);
+  }
+  .el-dialog__footer {
+    border-top: 1px solid rgb(237, 237, 237);
+    padding-bottom: 10px;
+  }
 }
