@@ -6,7 +6,8 @@ const getDefaultState = () => {
   return {
     id: undefined,
     nickname: undefined,
-    username: undefined
+    username: undefined,
+    authorities: []
   }
 }
 

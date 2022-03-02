@@ -24,8 +24,8 @@
         <el-radio v-model="formData.sex" label="1">男</el-radio>
         <el-radio v-model="formData.sex" label="2">女</el-radio>
       </el-form-item>
-      <el-form-item label="角色" prop="rules">
-        <el-select v-model="formData.rules" multiple placeholder="请选择">
+      <el-form-item label="角色" prop="roles">
+        <el-select v-model="formData.roles" multiple placeholder="请选择">
           <el-option
             v-for="item in roleOptions"
             :key="item.id"
