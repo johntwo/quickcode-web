@@ -63,7 +63,7 @@ export const asyncRoutes = [
       path: 'list',
       name: '角色列表',
       component: () => import('@/views/auth/index'),
-      meta: { title: '角色列表', icon: 'role' }
+      meta: { title: '角色列表', icon: 'role', roles: ['role-list'] }
     }]
   },
   {
@@ -74,7 +74,7 @@ export const asyncRoutes = [
       path: 'list',
       name: '用户列表',
       component: () => import('@/views/user/index'),
-      meta: { title: '用户列表', icon: 'user' }
+      meta: { title: '用户列表', icon: 'user', roles: ['user-list'] }
     }]
   },
 

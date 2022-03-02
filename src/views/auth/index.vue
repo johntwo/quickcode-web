@@ -12,7 +12,7 @@
       <div class="table-content">
         <div class="table-operation-container">
           <div class="filter-item">
-            <el-button type="primary" size="small" icon="el-icon-plus" @click="handleAdd">新增</el-button>
+            <el-button v-permission="['role-add']" type="primary" size="small" icon="el-icon-plus" @click="handleAdd">新增</el-button>
           </div>
         </div>
         <el-table
@@ -46,9 +46,10 @@
           </el-table-column>
           <el-table-column label="操作" align="center">
             <template slot-scope="{row}">
-              <el-button type="info" size="mini" @click="handleDetail(row)">详情</el-button>
-              <el-button type="primary" size="mini" @click="handleUpdate(row)">编辑</el-button>
+              <el-button v-permission="['role-details']" type="info" size="mini" @click="handleDetail(row)">详情</el-button>
+              <el-button v-permission="['role-update']" type="primary" size="mini" @click="handleUpdate(row)">编辑</el-button>
               <el-popconfirm
+                v-permission="['role-delete']"
                 confirm-button-text="确认"
                 cancel-button-text="取消"
                 icon="el-icon-info"
@@ -82,9 +83,11 @@ import Pagination from '@/components/Pagination'
 import Edit from '@/views/auth/components/Edit'
 import * as mainService from '@/api/role'
 import Detail from '@/views/auth/components/Detail'
+import permission from '@/directive/permission'
 export default {
   name: 'Index',
   components: { Detail, Edit, Pagination },
+  directives: { permission },
   data() {
     return {
       list: [],
